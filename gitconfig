@@ -1,0 +1,14 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[push]
+	default = simple
+[user]
+	name = Sagar Rohankar
+	email = user@email.com
+[rebase]
+	autoStash = true
+[pull]
+	rebase = true
