@@ -43,16 +43,16 @@ lock() {
 	foreground=ffffffff
 	/home/rohankar/Projects/github/i3lock-color/x86_64-pc-linux-gnu/i3lock \
 		-t -n -i "$1" \
-		--timepos="x-90:h-ch+30" \
-		--datepos="tx+24:ty+25" \
-		--clock --datestr "Type password to unlock..." \
+		--timepos="x-25:h-ch+55" --timesize=72 --timefont="M+ 1m" --datefont="M+ 1m" \
+		--datepos="tx+1550:ty+0" --datesize=30 --datestr="%A, %d %m %Y" \
+		--clock \
 		--insidecolor=$background --ringcolor=$foreground --line-uses-inside \
 		--keyhlcolor=$letterEnteredColor --bshlcolor=$letterRemovedColor --separatorcolor=$background \
 		--insidevercolor=$passwordCorrect --insidewrongcolor=$passwordIncorrect \
-		--ringvercolor=$foreground --ringwrongcolor=$foreground --indpos="x+280:h-70" \
-		--radius=20 --ring-width=4 --veriftext="" --wrongtext="" \
+		--ringvercolor=$foreground --ringwrongcolor=$foreground \
+		--radius=100 --ring-width=8 --veriftext="verifying..." --wrongtext="wrong!" \
 		--textcolor="$foreground" --timecolor="$foreground" --datecolor="$foreground" \
-		--force-clock
+		--timesize=72 --force-clock
 }
 
 postlock() {

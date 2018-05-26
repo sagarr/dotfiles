@@ -18,11 +18,11 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 250 250
 maximum_width 250
-draw_shades yes
+draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders nodename
-default_color EAEAEA
+default_color red
 default_shade_color black
 default_outline_color white
 alignment top_right
@@ -34,11 +34,12 @@ cpu_avg_samples 8
 override_utf8_locale no
 
 color1 FCD868
+# color1 red
 
 TEXT
 # Clock
-${color EAEAEA}${font GE Inspira:pixelsize=48}${time %I:%M}${font}${color FFA300}
-${font GE Inspira:pixelsize=28}${time %d} ${color EAEAEA}${font GE Inspira:pixelsize=20}${time %B} ${time %Y}${font}
+${color FFA300}${font GE Inspira:pixelsize=48}${time %I:%M}${font}${color FF3300}
+${font GE Inspira:pixelsize=28}${time %d} ${color FF3300}${font GE Inspira:pixelsize=20}${time %B} ${time %Y}${font}
 ${font GE Inspira:pixelsize=18}${time %A}${font}
 
 # SYSTEM
@@ -52,14 +53,14 @@ Uptime $alignr $uptime
 ${font FreeSans:Bold:size=10}${color1}CPU ${hr 2}
 $color${font}${execi 100000 cat /proc/cpuinfo | grep -m 1 'model name' | sed -e 's/model name.*: //' | sed -e 's/(tm)//'}
 
-${font}Core 1: ${cpu cpu1}%$alignc${color1}${cpubar 10 cpu1}${color}
-${font}Core 2: ${cpu cpu2}%$alignc${color1}${cpubar 10 cpu2}${color}
-${font}Core 3: ${cpu cpu3}%$alignc${color1}${cpubar 10 cpu3}${color}
-${font}Core 4: ${cpu cpu4}%$alignc${color1}${cpubar 10 cpu4}${color}
-${font}Core 5: ${cpu cpu5}%$alignc${color1}${cpubar 10 cpu5}${color}
-${font}Core 6: ${cpu cpu6}%$alignc${color1}${cpubar 10 cpu6}${color}
-${font}Core 7: ${cpu cpu7}%$alignc${color1}${cpubar 10 cpu7}${color}
-${font}Core 8: ${cpu cpu8}%$alignc${color1}${cpubar 10 cpu8}${color}
+${font}Core 1: ${cpu cpu1}%$alignc${color1}${cpubar cpu1 10}${color}
+${font}Core 2: ${cpu cpu2}%$alignc${color1}${cpubar cpu2 10}${color}
+${font}Core 3: ${cpu cpu3}%$alignc${color1}${cpubar cpu3 10}${color}
+${font}Core 4: ${cpu cpu4}%$alignc${color1}${cpubar cpu4 10}${color}
+${font}Core 5: ${cpu cpu5}%$alignc${color1}${cpubar cpu5 10}${color}
+${font}Core 6: ${cpu cpu6}%$alignc${color1}${cpubar cpu6 10}${color}
+${font}Core 7: ${cpu cpu7}%$alignc${color1}${cpubar cpu7 10}${color}
+${font}Core 8: ${cpu cpu8}%$alignc${color1}${cpubar cpu8 10}${color}
 
 # RISORSE
 ${font FreeSans:Bold:size=10}${color1}TOP ${hr 2}
@@ -97,15 +98,15 @@ ${color1}${fs_bar 10 /}${color}
 
 # NETWORK
 ${font FreeSans:Bold:size=10}${color1}NETWORK ${hr 2}
-$color${font FreeSans:bold:size=9}Local $font$alignr ${addr enxa44cc8f10f94}
+$color${font FreeSans:bold:size=9}Local $font$alignr ${addr wlp2s0}
 $color${font FreeSans:bold:size=9}Public $font$alignr ${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
 
-Down $alignr ${downspeedf enxa44cc8f10f94} kb/s
-${color1}${downspeedgraph 10}${color}
-Down Total $alignr ${totaldown enxa44cc8f10f94}
+Down $alignr ${downspeedf wlp2s0} kb/s
+${color1}${downspeedgraph wlp2s0 10}${color}
+Down Total $alignr ${totaldown wlp2s0}
 
-Up $alignr ${upspeedf enxa44cc8f10f94} kb/s
-${color1}${upspeedgraph 10}${color}
-Up Total $alignr ${totalup wlan0}
+Up $alignr ${upspeedf wlp2s0} kb/s
+${color1}${upspeedgraph wlp2s0 10}${color}
+Up Total $alignr ${totalup wlp2s0}
 
 
