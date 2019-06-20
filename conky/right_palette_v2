@@ -1,8 +1,7 @@
 ## This config was compiled from multiple sources by @Andril to fit perfectly for Solus OS (https://solus-project.com/download/)
 ## Enjoy! :)
 
-ximerama_head 0
-#display 1
+# ximerama_head 3
 background no
 font Sans:size=8
 xftfont Fira Code Retina:size=8
@@ -17,8 +16,8 @@ own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,skip_taskbar,skip_pager,sticky,below
 double_buffer yes
-minimum_size 220 5
-maximum_width 230
+#minimum_size 220 5
+#maximum_width 230
 draw_shades yes
 draw_outline no
 draw_borders no
@@ -26,9 +25,9 @@ draw_graph_borders yes
 default_color white
 default_shade_color black
 default_outline_color green
-alignment middle_right
-#gap_x 12
-#gap_y 35
+alignment top_left
+gap_x 30
+gap_y 20
 no_buffers yes
 uppercase no
 cpu_avg_samples 2

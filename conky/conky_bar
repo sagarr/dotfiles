@@ -20,8 +20,8 @@ conky.config = {
 	default_shade_color = '#000000',
 
 -- Position
-	gap_y = 5,
-	gap_x = 50,
+	gap_y = 0,
+	gap_x = 10,
 
 -- Alignment
 	alignment = 'top_left',
@@ -39,14 +39,15 @@ conky.config = {
 
 -- Font
 	use_xft = true,
-	font = 'PF Tempesta Seven Condensed:pixelsize=10',
+	font = 'Gotham:pixelsize=12',
+	--font = 'PF Tempesta Seven Condensed:pixelsize=11',
 
 -- Text alpha when using Xft
--- xftalpha 0.10
+	--xftalpha = 0.10
 
 -- to prevent window from moving
 	use_spacer = 'none',
-	minimum_width = 0, minimum_height = 20,
+	minimum_width = 0, minimum_height = 0,
 	maximum_width = 2560,
 	default_bar_width = 92, default_bar_height = 8,
 
@@ -68,22 +69,25 @@ conky.config = {
 };
 
 conky.text = [[
-${color5}${font OpenLogos:size=16}u${font}${voffset -8} \
 ${color2}Time: ${color3}${time %e %B %Y %I:%M:%S %p}${color5} | \
-${color2}CPU: ${color5}${voffset 2}${cpugraph cpu1 8,50}${voffset -2} \
-${color2}${color5}${voffset 2}${cpugraph cpu2 8,50}${voffset -2} \
-${color2}${color5}${voffset 2}${cpugraph cpu3 8,50}${voffset -2} \
-${color2}${color5}${voffset 2}${cpugraph cpu4 8,50}${voffset -2} ${color5} \
+${color2}CPU: ${color5}${voffset 2}${cpugraph cpu1 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu2 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu3 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu4 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu5 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu6 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu7 8,20}${voffset -2} \
+${color2}${color5}${voffset 2}${cpugraph cpu8 8,20}${voffset -2} \
+${color5} \
 ${color2}Trottle: ${color3}${freq_g} GHz ${color5}| \
 ${color2}Battery: ${color5}${voffset 3}${battery_bar 6,30 BAT0} ${voffset -3}${color3} ${battery_time} ${color5}| \
 ${color2}RAM: ${color3}${memperc}% ${color5}| \
 ${color4}Free: \
-${color2}home ${color3}${fs_free_perc /home}% \
-${color2}root ${color3}${fs_free_perc /root}% ${color5}\
-${color2}usb ${color3}${fs_free_perc /dev/sdb2}% ${color4}free ${color5}| \
+${color2}home ${color3}${fs_free_perc /home}% ${color5}| \
 ${color2}Uptime: ${color3}${uptime} ${color5}| \
 ${color2}Kernel: ${color3}${kernel} ${color5}| \
 ${color2}Uptime: ${color3}${uptime} ${color5}| \
-${color2}wifi: ${color4}DOWN ${color5}${voffset 2}${downspeedgraph wlp2s0 8,20}${voffset -2} ${downspeed wlp2s0}${color4} UP ${color5}${voffset 2}${upspeedgraph wlp2s0 8,20}${voffset -2} ${upspeed wlp2s0}${color5} | \
+${color2}wifi: ${color4}DOWN ${color5}${voffset 2}${downspeedgraph wlp2s0 8,20}${voffset -2} \
+${downspeed wlp2s0}${color4} UP ${color5}${voffset 2}${upspeedgraph wlp2s0 8,20}${voffset -2} ${upspeed wlp2s0}${color5} | \
 ${color2}Top: ${color3} ${top name 1} ${color2}cpu/ram:${color4}${top cpu 1}%${top mem 1}%
 ]];

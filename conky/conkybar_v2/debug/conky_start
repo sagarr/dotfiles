@@ -1,0 +1,4 @@
+#!/bin/bash
+kill `expr match "\`ps ax | grep conky_test \`" '\([0-9]*\)'`
+conky -c ~/.conky/conkybar_v2/debug/conky_test &
+exit

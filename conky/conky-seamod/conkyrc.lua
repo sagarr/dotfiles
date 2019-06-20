@@ -19,10 +19,11 @@ conky.config = {
 	no_buffers = true,
 	text_buffer_size = 2048,
 
-	xinerama_head = 3,
-	gap_x = 20,
-	gap_y = 0,
-	minimum_width = 300, minimum_height = 1000,
+	xinerama_head = 0,
+	gap_x = 10,
+	gap_y = 50,
+	alignment = 'top_left',
+	minimum_width = 300, minimum_height = 800,
 	maximum_width = 350,
 
 	own_window = true,
@@ -34,7 +35,6 @@ conky.config = {
 
 	border_inner_margin = 0,
 	border_outer_margin = 0,
-	alignment = 'bottom_right',
 
 
 	draw_shades = false,
@@ -44,7 +44,7 @@ conky.config = {
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'caviar dreams:size=11',
+	font = 'caviar dreams:size=10',
 	xftalpha = 0.5,
 	uppercase = false,
 
@@ -100,7 +100,7 @@ ${offset 90}${font Ubuntu:size=11:style=bold}${color5}DISKS
 ${offset 120}${diskiograph 40,220 666666 666666 -l}${voffset -30}
 ${voffset 20}
 ${offset 15}${font Ubuntu:size=10:style=bold}${color1}Free: $color3${font Ubuntu:size=10:style=normal}${fs_free /}${alignr}${font Ubuntu:size=10:style=bold}${color1}Used: $color3${font Ubuntu:size=10:style=normal}${fs_used /}
-${offset 15}${font Ubuntu:size=10:style=bold}${color1}Free: $color3${font Ubuntu:size=10:style=normal}${fs_free /home}${alignr}${font Ubuntu:size=10:style=bold}${color1}Used: $color3${font Ubuntu:size=10:style=normal}${fs_used /home}
+${offset 15}${font Ubuntu:size=10:style=bold}${color1}Free: $color3${font Ubuntu:size=10:style=normal}${fs_free /home/rohankar}${alignr}${font Ubuntu:size=10:style=bold}${color1}Used: $color3${font Ubuntu:size=10:style=normal}${fs_used /home/rohankar}
 ${offset 15}${font Ubuntu:size=10:style=bold}${color1}Free: $color3${font Ubuntu:size=10:style=normal}${fs_free /tmp}${alignr}${font Ubuntu:size=10:style=bold}${color1}Used: $color3${font Ubuntu:size=10:style=normal}${fs_used /tmp}
 
 # Network data (my desktop have only LAN). ETHERNET ring is mostly useless but looks pretty, main info is in the graphs
@@ -111,7 +111,7 @@ ${offset 200}${font Ubuntu:size=10:style=bold}${color1}Ext IP: ${alignr}$color3$
 ${offset 190}${font Ubuntu:size=10:style=bold}${alignr}$color3${execi 600 wget -q -O /dev/stdout https://www.dnsleaktest.com/ | grep from | grep -o '<p>.*<img' | grep -o '>.*<' | grep -oEi '[a-zA-Z0-9 ,]+'}
 
 ${voffset -60}
-${offset 90}${font Ubuntu:size=11:style=bold}${color5}ETHERNET
+${offset 90}${font Ubuntu:size=11:style=bold}${color5}WIFI
 ${voffset 40}             
 ${offset 15}${color1}${font ubuntu:size=10:style=bold}Up: ${alignr}${font Ubuntu:size=10:style=normal}$color2${upspeed wlp2s0} / ${totalup wlp2s0}
 ${offset 15}${upspeedgraph wlp2s0 40,320 4B1B0C FF5C2B 1280KiB -l}
